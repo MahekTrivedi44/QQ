@@ -1,0 +1,6 @@
+bcrypt
+requests
+Flask
+Flask-Cors
+fpdf
+gradio

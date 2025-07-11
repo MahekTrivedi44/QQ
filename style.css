@@ -1,0 +1,510 @@
+@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap');
+
+/* Overall app background - Keep white as per previous request */
+.gradio-container, body, .gradio-app {
+    background-color: #FFFFFF !important;
+}
+/* Base font and color for all elements */
+* {
+    font-family: 'Love Ya Like A Sister', cursive !important;
+    color: #6c493b !important; /* Base brown color */
+}
+
+/* Specific overrides for text and placeholders */
+input, textarea, .gradio-dropdown .primary-wrap, #flashcard_block .gradio-radio label,
+.gradio-accordion .label, .gradio-file {
+    color: #6c493b !important;
+    font-family: 'Love Ya Like A Sister', cursive !important;
+}
+
+/* Style for the main authentication container */
+#auth_container {
+    background-color: white !important; /* User explicitly requested white BG for this container */
+    box-shadow: 0 0 15px 5px rgba(108, 73, 59, 0.5) !important; /* Shiny border effect */
+    border-radius: 20px; /* Keep rounded corners, adjusted to match user's provided example */
+    padding: 15px; /* Keep padding, adjusted to match user's provided example */
+    max-width: 600px; /* Limit width for better readability */
+    height: 420px;
+    display: flex; /* Use flexbox for layout */
+}
+#chatbot-cont {
+    background-color: white !important; /* User explicitly requested white BG for this container */
+    box-shadow: 0 0 15px 5px rgba(108, 73, 59, 0.5) !important; /* Shiny border effect */
+    border-radius: 20px; /* Keep rounded corners, adjusted to match user's provided example */
+    padding: 15px; /* Keep padding, adjusted to match user's provided example */
+}
+#send_buttons {
+    border-radius: 12px !important;
+    box-shadow: 0 0 15px 5px rgba(108, 73, 59, 0.5) !important; /* Shiny border effect */
+}
+/* Font and color for general labels and headings within auth section */
+#auth_container h2,
+#auth_container label,
+#auth_container .gr-textbox label,
+#auth_container .gr-checkbox label {
+    font-family: 'Love Ya Like A Sister', cursive !important;
+    color: #6c493b !important;
+    background-color: white !important; /* Ensure no background color */
+}
+
+/* Style for textboxes (input fields) */
+#auth_container .gr-textbox input {
+    color: #6c493b !important; /* Text color inside input */
+    background-color: white !important; /* Background of the input field */
+    border: 1px solid #6c493b !important; /* Plain border */
+    outline: none !important; /* Remove blue focus outline */
+    box-shadow: none !important; /* Remove any default shadow */
+}
+/* Style for textboxes when focused (to prevent blue box) */
+#auth_container .gr-textbox input:focus {
+    border-color: #6c493b !important;
+    box-shadow: 0 0 0 2px rgba(108, 73, 59, 0.2) !important; /* Soft focus effect, not blue */
+}
+
+/* Style for the tab navigation bar itself */
+#auth_container .gradio-tabs-nav {
+    border-radius: 8px; /* Slightly rounded tabs nav */
+}
+
+/* Style for the content area of the tabs (inside Login/Signup tabs) */
+#auth_container .gradio-tabs > div[data-tab] {
+    background-color: white !important; /* Keep content area white */
+    padding: 10px; /* Add some padding to the tab content */
+}
+
+/* General styling for headers within tabs */
+#auth_container .gradio-tabs h2 {
+    color: #6c493b !important;
+    font-family: 'Love Ya Like A Sister', cursive !important;
+}
+
+/* Ensure the `gr.Markdown` for status output also uses the correct font/color */
+#auth_container .gradio-markdown {
+    color: #6c493b !important;
+    font-family: 'Love Ya Like A Sister', cursive !important;
+}
+
+/* Apply custom label cleanup only to login form */
+#login-user label,
+#login-pass label {
+    background-color: transparent !important;
+    color: #6c493b !important;
+    font-family: 'Love Ya Like A Sister', cursive !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    padding: 0 !important;
+    margin: 0 0 4px 0 !important;
+    box-shadow: none !important;
+}
+.custom-label, 
+.custom-label h1,
+.custom-label h2,
+.custom-label h3,
+.custom-label h4,
+.custom-label h5,
+.custom-label h6 {
+    font-family: 'Love Ya Like A Sister', cursive !important;
+    color: #6c493b !important;
+    font-size: 18px !important;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.pastconvos-label {
+    font-family: 'Love Ya Like A Sister', cursive !important;
+    color: #6c493b !important;
+    font-size: 10px !important;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+#submit_buttons {
+    border-radius: 12px !important;
+    background-color: #b77a5a !important; /* Deep brown */
+    color: white !important; /* White text */
+    font-weight: bold !important;
+    font-family: 'Love Ya Like A Sister', cursive !important;
+    border: none !important;
+}
+#submit_buttons:hover {
+    background-color: #6c493b !important; /* Slightly darker brown */
+    cursor: pointer;
+}
+
+/* Fully override tab button styling */
+button[role="tab"] {
+    font-family: 'Love Ya Like A Sister', cursive !important;
+    font-size: 18px !important;
+    color: #6c493b !important;
+    background-color: white !important;
+    border: none !important;
+    font-weight: bold !important;
+    box-shadow: none !important;
+    padding: 10px 16px !important;
+    outline: none !important;
+}
+/* Side-by-side layout for auth and about image */
+#about-img {
+    width: 95% !important;
+    height: auto !important;
+    box-shadow: 0 0 15px 5px rgba(108, 73, 59, 0.5) !important; /* Shiny border effect */
+    border-radius: 20px; /* Keep rounded corners, adjusted to match user's provided example */
+    object-fit: contain; /* crop if needed */
+}
+
+/* Optionally constrain the overall height of the auth + image section */
+#auth_container {
+    max-height: 600px;
+}
+/* CHAT UI SPECIFIC STYLES */
+#chat_ui {
+    padding: 20px !important;
+    background-color: #FFFFFF !important;
+    /* This column is already set to scale=3, managing its width */
+}
+
+/* Chatbot container */
+.gradio-chatbot {
+    border: 2px solid #b77a5a !important; /* Brown border for the chat container */
+    border-radius: 15px !important; /* Rounded corners */
+    background-color: #fcf8f6 !important; /* Light creamy background */
+    height: 500px !important; /* Maintain the height */
+    overflow-y: auto !important; /* Ensure scrollability */
+}
+
+/* User message bubble */
+.gradio-chatbot .message.user {
+    background-color: #e6e6fa !important; /* Light purple */
+    color: #4a4a4a !important;
+    border-radius: 15px 15px 0px 15px !important;
+    padding: 10px 15px !important;
+    max-width: 80% !important; /* Limit width */
+    margin-left: auto !important; /* Align to right */
+    align-self: flex-end !important; /* For flex container */
+}
+
+/* Bot message bubble */
+.gradio-chatbot .message.bot {
+    background-color: #ffe4e1 !important; /* Misty rose/light pink */
+    color: #4a4a4a !important;
+    border-radius: 15px 15px 15px 0px !important;
+    padding: 10px 15px !important;
+    max-width: 80% !important; /* Limit width */
+    margin-right: auto !important; /* Align to left */
+    align-self: flex-start !important; /* For flex container */
+}
+
+/* Message text inside bubbles */
+.gradio-chatbot .message p {
+    font-family: 'Love Ya Like A Sister', cursive !important;
+    font-size: 16px !important; /* Adjust font size for readability */
+    line-height: 1.4 !important;
+    color: #4a4a4a !important; /* Darker text for readability */
+}
+
+/* Chatbot input textbox */
+#chat_ui .gradio-textbox textarea {
+    border: 1px solid #b77a5a !important;
+    border-radius: 10px !important;
+    background-color: white !important;
+    color: #6c493b !important;
+    padding: 10px 15px !important;
+    font-size: 16px !important;
+    box-shadow: inset 1px 1px 3px rgba(0,0,0,0.1); /* Inner shadow for input */
+}
+#chat_ui .gradio-textbox textarea:focus {
+    border-color: #6c493b !important;
+    box-shadow: 0 0 0 2px rgba(108, 73, 59, 0.2) !important;
+}
+
+/* Dropdown styling (for "Past Chats") */
+.gradio-dropdown {
+    border: 1px solid #b77a5a !important;
+    border-radius: 10px !important;
+    background-color: white !important;
+    color: #6c493b !important;
+}
+.gradio-dropdown .primary-wrap {
+    font-family: 'Love Ya Like A Sister', cursive !important;
+    color: #6c493b !important;
+    padding: 8px 12px !important;
+}
+.gradio-dropdown.focus {
+    border-color: #6c493b !important;
+    box-shadow: 0 0 0 2px rgba(108, 73, 59, 0.2) !important;
+}
+/* Dropdown options list */
+.gradio-dropdown-options {
+    background-color: white !important;
+    border: 1px solid #b77a5a !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.gradio-dropdown-option {
+    font-family: 'Love Ya Like A Sister', cursive !important;
+    color: #6c493b !important;
+    padding: 8px 12px !important;
+}
+.gradio-dropdown-option:hover {
+    background-color: #fcf8f6 !important; /* Light creamy on hover */
+}
+.gradio-dropdown-option.selected {
+    background-color: #ffe4e1 !important; /* Misty rose/light pink for selected */
+}
+
+/* Radio buttons (for Flashcard format) */
+/* Radio buttons (for Flashcard format) */
+#flashcard_block .gradio-radio {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    display: flex !important; /* Make radio group itself a flex container */
+    flex-wrap: wrap !important; /* Allow options to wrap */
+    gap: 10px !important; /* Add space between radio buttons */
+}
+
+/* Style for each radio button choice container (the button-like appearance) */
+#flashcard_block .gradio-radio > label {
+    display: flex !important; /* To align the radio dot and text nicely */
+    align-items: center !important;
+    font-family: 'Love Ya Like A Sister', cursive !important;
+    color: #6c493b !important;
+    font-size: 16px !important;
+    padding: 8px 12px !important; /* Add some padding around the option */
+    border: 1px solid #b77a5a !important; /* Add a border to the option */
+    border-radius: 10px !important; /* Rounded corners for the option */
+    background-color: white !important; /* Ensure the background is white by default */
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease; /* Smooth transition */
+}
+
+/* When a radio button option is hovered */
+#flashcard_block .gradio-radio > label:hover {
+    background-color: #fcf8f6 !important; /* Light creamy on hover, matching dropdown */
+}
+
+/* *** THIS IS THE CRUCIAL PART TO TARGET THE SELECTED RADIO BUTTON'S BACKGROUND *** */
+/* Target the label when it has the 'selected' class */
+#flashcard_block .gradio-radio > label.selected {
+    background-color: #ffe4e1 !important; /* Misty rose/light pink for selected, matching dropdown selected */
+    border-color: #b77a5a !important; /* Stronger border for selected state */
+    color: #b77a5a !important; /* Change text color for selected label */
+    /* Ensure no blue shadow or outline */
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Style for the actual radio input (the circle/dot) */
+#flashcard_block .gradio-radio input[type="radio"] {
+    /* Remove default appearance that might cause blue background */
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+
+    /* Custom styling for the radio dot itself */
+    width: 18px !important; /* Adjust size of the radio dot */
+    height: 18px !important; /* Adjust size of the radio dot */
+    margin-right: 8px !important; /* Space between the dot and text */
+    border: 2px solid #b77a5a !important; /* Border for the radio circle */
+    border-radius: 50% !important; /* Make it a circle */
+    background-color: transparent !important; /* Ensure no background on the input itself */
+    position: relative !important;
+    outline: none !important; /* Remove focus outline */
+    cursor: pointer;
+    box-shadow: none !important; /* Remove any lingering blue shadow */
+    accent-color: transparent !important; /* Try to neutralize accent-color effect on background */
+}
+
+/* Style for the inner dot of the radio button when checked */
+#flashcard_block .gradio-radio input[type="radio"]:checked {
+    border-color: #b77a5a !important; /* Keep border color consistent */
+    background-color: transparent !important; /* Ensure no background on the input itself */
+    outline: none !important; /* Double-check no outline */
+    box-shadow: none !important; /* Double-check no shadow */
+}
+
+#flashcard_block .gradio-radio input[type="radio"]:checked::before {
+    content: '' !important;
+    display: block !important;
+    width: 10px !important; /* Size of the inner dot */
+    height: 10px !important; /* Size of the inner dot */
+    background-color: #b77a5a !important; /* Color of the inner dot */
+    border-radius: 50% !important;
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+/* Style for the text part of the radio button (the span next to input) */
+#flashcard_block .gradio-radio input[type="radio"] + span {
+    font-family: 'Love Ya Like A Sister', cursive !important;
+    color: #6c493b !important; /* Default text color */
+    font-size: 16px !important;
+    background-color: transparent !important; /* Ensure span background is always transparent */
+}
+
+/* Style for the text part when its associated radio button is checked */
+#flashcard_block .gradio-radio input[type="radio"]:checked + span {
+    color: #b77a5a !important; /* Color of the selected radio button text */
+    font-weight: bold !important;
+}
+
+
+/* Checkbox (Remember Me) */
+.gradio-checkbox label {
+    font-family: 'Love Ya Like A Sister', cursive !important;
+    color: #6c493b !important;
+    font-size: 16px !important;
+    padding-left: 5px !important;
+}
+.gradio-checkbox input[type="checkbox"] {
+    accent-color: #b77a5a !important; /* Color of the checkbox */
+}
+
+/* Accordion for Export Tools */
+.gradio-accordion > button {
+    font-family: 'Love Ya Like A Sister', cursive !important;
+    color: #6c493b !important;
+    font-size: 18px !important;
+    background-color: #f5f5dc !important; /* Beige background for the accordion header */
+    border-radius: 8px !important;
+    border: 1px solid #b77a5a !important;
+    padding: 10px 15px !important;
+    font-weight: bold !important;
+}
+.gradio-accordion .label:hover {
+    background-color: #eee8d5 !important;
+}
+.gradio-accordion .gr-block {
+    border: 1px solid #b77a5a !important;
+    border-top: none !important;
+    border-radius: 0 0 8px 8px !important;
+    background-color: white !important;
+    padding: 15px !important;
+}
+
+/* File download component */
+.gradio-file {
+    font-family: 'Love Ya Like A Sister', cursive !important;
+    color: #6c493b !important;
+    border: 1px solid #b77a5a !important;
+    border-radius: 10px !important;
+    background-color: #fcf8f6 !important;
+    padding: 10px;
+    margin-top: 10px;
+}
+.gradio-file a {
+    color: #b77a5a !important;
+    text-decoration: none !important;
+}
+.gradio-file a:hover {
+    text-decoration: underline !important;
+}
+/* Hide the file download button itself, just show the link */
+.gradio-file .file-preview button {
+    display: none !important;
+}
+
+
+/* Info and Warning messages (gr.Info, gr.Warning, gr.Markdown) */
+.gradio-mark-up {
+    font-family: 'Love Ya Like A Sister', cursive !important;
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+    padding: 10px 15px !important;
+    border-radius: 8px !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+
+.gradio-mark-up.info {
+    background-color: #d4edda !important; /* Light green for info */
+    border-color: #c3e6cb !important;
+    color: #155724 !important; /* Dark green text */
+}
+.gradio-mark-up.warning {
+    background-color: #fff3cd !important; /* Light yellow for warning */
+    border-color: #ffeeba !important;
+    color: #856404 !important; /* Dark yellow text */
+}
+/* Ensure the text within these is also the correct font/color */
+.gradio-mark-up p {
+    font-family: 'Love Ya Like A Sister', cursive !important;
+    color: inherit !important; /* Inherit color from parent .gradio-mark-up */
+}
+
+
+/* The horizontal rule (---) */
+hr {
+    border-top: 1px dashed #b77a5a !important;
+    background-color: transparent !important;
+    margin: 20px 0 !important;
+}
+
+/* The main logo image */
+#logo-img {
+    margin-bottom: 20px; /* Add some space below the logo */
+    display: block; /* Ensure it behaves as a block element for margin */
+    margin-left: auto;
+    margin-right: auto;
+}
+label.selected.svelte-1bx8sav {
+  background: #ffe4e1 !important; /* Your desired pink background */
+  color: #b77a5a !important;
+  border-color: #b77a5a !important;
+  box-shadow: none !important;
+  accent-color: initial !important; /* <-- removes the blue! */
+}
+
+/* Creator container */
+#creator_info_container {
+    background-color: white !important;
+    box-shadow: 0 0 15px 5px rgba(108, 73, 59, 0.5) !important;
+    border-radius: 20px;
+    padding: 15px;
+    margin-top: 20px;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Title */
+#creator_info_container h3 {
+    font-family: 'Love Ya Like A Sister', cursive !important;
+    color: #6c493b !important;
+    margin-bottom: 15px;
+}
+
+/* Force row to behave correctly */
+#creator_button_row {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    width: 100% !important;
+    flex-wrap: nowrap !important;
+}
+
+/* Force buttons to shrink and align */
+#btn_linkedin,
+#btn_github,
+#btn_mail {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    white-space: nowrap !important;
+    text-align: center !important;
+    border-radius: 12px !important;
+    background-color: #b77a5a !important;
+    color: white !important;
+    font-weight: bold !important;
+    font-family: 'Love Ya Like A Sister', cursive !important;
+    border: none !important;
+    padding: 10px 0 !important;
+}
+
+/* Hover effect */
+#btn_linkedin:hover,
+#btn_github:hover,
+#btn_mail:hover {
+    background-color: #6c493b !important;
+    cursor: pointer;
+}
